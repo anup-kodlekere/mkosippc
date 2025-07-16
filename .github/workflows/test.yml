@@ -1,0 +1,27 @@
+name: Loopback
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build on ${{ matrix.arch }}
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-latest
+          - arch: ppc64le
+            runner: ubuntu-24.04-ppc64le
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Inspect
+        run: |
+          echo "Running on ${{ matrix.arch }}"
+
+          df -h
+          
