@@ -28,7 +28,9 @@ jobs:
           free -h
           df -h
 
-          cat /sys/fs/cgroup/cpuset/cpuset.cpus
-          cat /proc/stat
-          docker run  -t ubuntu:latest bash -c 'cat /sys/fs/cgroup/cpuset/cpuset.cpus && nproc'
+          whoami
+          ls /sys/fs/cgroup/
+          sudo cat /sys/fs/cgroup/cpuset.cpus
+          sudo cat /proc/stat
+          docker run  -t ubuntu:latest bash -c 'cat /sys/fs/cgroup/cpuset.cpus && nproc'
           
