@@ -25,6 +25,7 @@ jobs:
           echo "Running on ${{ matrix.arch }}"
 
           echo $HOME
+          env
 
           nproc
           free -h
