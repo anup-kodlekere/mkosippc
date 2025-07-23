@@ -24,16 +24,19 @@ jobs:
         run: |
           echo "Running on ${{ matrix.arch }}"
 
-          echo $HOME
+          echo "Home is : $HOME \n"
+          
           env
 
-          nproc
-          free -h
-          df -h
+          cat ~/.bashrc
 
-          whoami
-          ls /sys/fs/cgroup/
-          sudo cat /sys/fs/cgroup/cpuset.cpus
-          sudo cat /proc/stat
-          docker run  -t ubuntu:latest bash -c 'cat /sys/fs/cgroup/cpuset.cpus && nproc'
+          # nproc
+          # free -h
+          # df -h
+
+          # whoami
+          # ls /sys/fs/cgroup/
+          # sudo cat /sys/fs/cgroup/cpuset.cpus
+          # sudo cat /proc/stat
+          # docker run  -t ubuntu:latest bash -c 'cat /sys/fs/cgroup/cpuset.cpus && nproc'
           
